@@ -1,0 +1,27 @@
+{
+  "gpiApp": {
+    "sessionEnseignement": {
+      "home": {
+        "title": "Session Enseignements",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Session Enseignement",
+        "createOrEditLabel": "Create or edit a Session Enseignement",
+        "notFound": "No Session Enseignements found"
+      },
+      "created": "A new Session Enseignement is created with identifier {{ param }}",
+      "updated": "A Session Enseignement is updated with identifier {{ param }}",
+      "deleted": "A Session Enseignement is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Session Enseignement {{ id }}?"
+      },
+      "detail": {
+        "title": "Session Enseignement"
+      },
+      "id": "ID",
+      "dateDebut": "Date Debut",
+      "dateFin": "Date Fin",
+      "cours": "Cours",
+      "salleReserver": "Salle Reserver"
+    }
+  }
+}

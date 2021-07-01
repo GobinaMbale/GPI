@@ -1,0 +1,39 @@
+{
+  "name": "SessionEnseignement",
+  "fields": [
+    {
+      "fieldName": "dateDebut",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateFin",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "enseigner",
+      "otherEntityRelationshipName": "sessionEnseignement",
+      "relationshipName": "cours"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "reserverSalle",
+      "otherEntityRelationshipName": "sessionEnseignement",
+      "relationshipName": "salleReserver"
+    }
+  ],
+  "entityTableName": "session_enseignement",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210630153025"
+}

@@ -1,0 +1,27 @@
+{
+  "gpiApp": {
+    "reserverMateriel": {
+      "home": {
+        "title": "Reserver Materiels",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Reserver Materiel",
+        "createOrEditLabel": "Create or edit a Reserver Materiel",
+        "notFound": "No Reserver Materiels found"
+      },
+      "created": "A new Reserver Materiel is created with identifier {{ param }}",
+      "updated": "A Reserver Materiel is updated with identifier {{ param }}",
+      "deleted": "A Reserver Materiel is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Reserver Materiel {{ id }}?"
+      },
+      "detail": {
+        "title": "Reserver Materiel"
+      },
+      "id": "ID",
+      "dateReservation": "Date Reservation",
+      "dateRetour": "Date Retour",
+      "auteur": "Auteur",
+      "materiel": "Materiel"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "gpiApp": {
+    "TypeEnseignant": {
+      "null": "",
+      "PERMANENT": "PERMANENT",
+      "VACATAIRE": "VACATAIRE"
+    }
+  }
+}

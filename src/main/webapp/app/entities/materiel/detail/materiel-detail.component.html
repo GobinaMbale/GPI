@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="materiel">
+      <h2 data-cy="materielDetailsHeading"><span jhiTranslate="gpiApp.materiel.detail.title">Materiel</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ materiel.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.materiel.nom">Nom</span></dt>
+        <dd>
+          <span>{{ materiel.nom }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.materiel.dateCreation">Date Creation</span></dt>
+        <dd>
+          <span>{{ materiel.dateCreation | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.materiel.etat">Etat</span></dt>
+        <dd>
+          <span>{{ materiel.etat }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.materiel.type">Type</span></dt>
+        <dd>
+          <div *ngIf="materiel.type">
+            <a [routerLink]="['/type-materiel', materiel.type?.id, 'view']">{{ materiel.type?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/materiel', materiel.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

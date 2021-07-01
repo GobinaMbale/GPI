@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-user-mgr-heading" data-cy="UserMgrCreateUpdateHeading" jhiTranslate="gpiApp.userMgr.home.createOrEditLabel">
+        Create or edit a User Mgr
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="gpiApp.userMgr.type" for="field_type">Type</label>
+          <select class="form-control" name="type" formControlName="type" id="field_type" data-cy="type">
+            <option [ngValue]="null">{{ 'gpiApp.TypeEnseignant.null' | translate }}</option>
+            <option value="PERMANENT">{{ 'gpiApp.TypeEnseignant.PERMANENT' | translate }}</option>
+            <option value="VACATAIRE">{{ 'gpiApp.TypeEnseignant.VACATAIRE' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="gpiApp.userMgr.quotaHoraire" for="field_quotaHoraire">Quota Horaire</label>
+          <input
+            type="number"
+            class="form-control"
+            name="quotaHoraire"
+            id="field_quotaHoraire"
+            data-cy="quotaHoraire"
+            formControlName="quotaHoraire"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="gpiApp.userMgr.departement" for="field_departement">Departement</label>
+          <select class="form-control" id="field_departement" data-cy="departement" name="departement" formControlName="departement">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                departementOption.id === editForm.get('departement')!.value?.id ? editForm.get('departement')!.value : departementOption
+              "
+              *ngFor="let departementOption of departementsSharedCollection; trackBy: trackDepartementById"
+            >
+              {{ departementOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="gpiApp.userMgr.grade" for="field_grade">Grade</label>
+          <select class="form-control" id="field_grade" data-cy="grade" name="grade" formControlName="grade">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="gradeOption.id === editForm.get('grade')!.value?.id ? editForm.get('grade')!.value : gradeOption"
+              *ngFor="let gradeOption of gradesSharedCollection; trackBy: trackGradeById"
+            >
+              {{ gradeOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

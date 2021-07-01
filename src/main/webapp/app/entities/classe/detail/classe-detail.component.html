@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="classe">
+      <h2 data-cy="classeDetailsHeading"><span jhiTranslate="gpiApp.classe.detail.title">Classe</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ classe.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.classe.code">Code</span></dt>
+        <dd>
+          <span>{{ classe.code }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.classe.niveau">Niveau</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'gpiApp.Niveau.' + classe.niveau }}">{{ classe.niveau }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.classe.specialite">Specialite</span></dt>
+        <dd>
+          <span>{{ classe.specialite }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.classe.libelle">Libelle</span></dt>
+        <dd>
+          <span>{{ classe.libelle }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/classe', classe.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

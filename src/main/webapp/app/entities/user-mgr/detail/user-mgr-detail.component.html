@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="userMgr">
+      <h2 data-cy="userMgrDetailsHeading"><span jhiTranslate="gpiApp.userMgr.detail.title">User Mgr</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ userMgr.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.userMgr.type">Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'gpiApp.TypeEnseignant.' + userMgr.type }}">{{ userMgr.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.userMgr.quotaHoraire">Quota Horaire</span></dt>
+        <dd>
+          <span>{{ userMgr.quotaHoraire }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.userMgr.departement">Departement</span></dt>
+        <dd>
+          <div *ngIf="userMgr.departement">
+            <a [routerLink]="['/departement', userMgr.departement?.id, 'view']">{{ userMgr.departement?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.userMgr.grade">Grade</span></dt>
+        <dd>
+          <div *ngIf="userMgr.grade">
+            <a [routerLink]="['/grade', userMgr.grade?.id, 'view']">{{ userMgr.grade?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/user-mgr', userMgr.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

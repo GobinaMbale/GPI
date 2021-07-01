@@ -1,0 +1,38 @@
+{
+  "name": "UserMgr",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "TypeEnseignant",
+      "fieldValues": "PERMANENT,VACATAIRE"
+    },
+    {
+      "fieldName": "quotaHoraire",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "departement",
+      "otherEntityRelationshipName": "userMgr",
+      "relationshipName": "departement"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "grade",
+      "otherEntityRelationshipName": "userMgr",
+      "relationshipName": "grade"
+    }
+  ],
+  "entityTableName": "user_mgr",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210630153016"
+}

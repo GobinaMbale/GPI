@@ -1,0 +1,103 @@
+entity Departement {
+	code String required unique
+    libelle String required
+     
+}
+
+entity UserMgr {
+	type TypeEnseignant
+    quotaHoraire Integer
+}
+
+entity Matiere{
+	code String required unique
+    libelle String required
+    credit Integer required
+    description String 
+}
+
+entity Salle{
+	code String required unique
+    nom String
+    campus String 
+    capacite Integer required
+    batiment String
+}
+
+entity Classe{
+	code String required unique
+    niveau Niveau
+    specialite String // Filière
+    libelle String required
+}
+
+entity TypeMateriel{
+	libelle String required unique
+}
+
+entity Materiel {
+	nom String required unique
+    dateCreation Instant required
+    etat Boolean 
+}
+
+entity ReserverMateriel{
+	dateReservation Instant
+    dateRetour Instant
+}
+
+entity ReserverSalle{
+	dateReservation Instant required
+    motif String required
+}
+
+entity Enseigner{
+	dateDebut Instant required
+    dateFin Instant required
+}
+
+entity SessionEnseignement {
+	dateDebut Instant required
+    dateFin Instant required
+}
+
+enum Niveau {
+	I,
+    II,
+    III,
+    IV,
+    V 
+}
+
+enum TypeEnseignant {
+	PERMANENT,
+    VACATAIRE
+}
+
+entity Grade {
+	code String required unique
+    intitule String required 
+    description String
+}
+
+/*relationship OneToOne {
+	UserMgr{user} to User	
+}*/
+
+relationship ManyToOne{
+	Materiel{type} to TypeMateriel
+    UserMgr{departement} to Departement // Affectation enseignant au département
+    UserMgr{grade} to Grade
+    ReserverMateriel{auteur} to UserMgr
+    ReserverMateriel{materiel} to Materiel
+    Enseigner{matiere} to Matiere
+    Enseigner{enseignant} to UserMgr 
+    ReserverSalle{classe} to Classe
+    ReserverSalle{salle} to Salle
+    SessionEnseignement{cours} to Enseigner
+    SessionEnseignement{salleReserver} to ReserverSalle
+    
+}
+
+service all with serviceImpl
+paginate all with pagination

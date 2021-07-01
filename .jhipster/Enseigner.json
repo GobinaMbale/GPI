@@ -1,0 +1,39 @@
+{
+  "name": "Enseigner",
+  "fields": [
+    {
+      "fieldName": "dateDebut",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateFin",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "matiere",
+      "otherEntityRelationshipName": "enseigner",
+      "relationshipName": "matiere"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "userMgr",
+      "otherEntityRelationshipName": "enseigner",
+      "relationshipName": "enseignant"
+    }
+  ],
+  "entityTableName": "enseigner",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210630153024"
+}

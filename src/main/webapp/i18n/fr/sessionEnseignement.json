@@ -1,0 +1,27 @@
+{
+  "gpiApp": {
+    "sessionEnseignement": {
+      "home": {
+        "title": "SessionEnseignements",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Session Enseignement",
+        "createOrEditLabel": "Créer ou éditer un Session Enseignement",
+        "notFound": "Aucun Session Enseignement trouvé"
+      },
+      "created": "Un nouveau Session Enseignement a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Session Enseignement avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Session Enseignement avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Session Enseignement {{ id }} ?"
+      },
+      "detail": {
+        "title": "Session Enseignement"
+      },
+      "id": "ID",
+      "dateDebut": "Date Debut",
+      "dateFin": "Date Fin",
+      "cours": "Cours",
+      "salleReserver": "Salle Reserver"
+    }
+  }
+}

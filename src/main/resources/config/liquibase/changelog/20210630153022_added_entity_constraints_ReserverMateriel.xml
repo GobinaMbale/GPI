@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity ReserverMateriel.
+    -->
+    <changeSet id="20210630153022-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="auteur_id"
+                                 baseTableName="reserver_materiel"
+                                 constraintName="fk_reserver_materiel__auteur_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_mgr"/>
+
+        <addForeignKeyConstraint baseColumnNames="materiel_id"
+                                 baseTableName="reserver_materiel"
+                                 constraintName="fk_reserver_materiel__materiel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="materiel"/>
+    </changeSet>
+</databaseChangeLog>

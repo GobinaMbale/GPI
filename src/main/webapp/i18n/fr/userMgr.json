@@ -1,0 +1,27 @@
+{
+  "gpiApp": {
+    "userMgr": {
+      "home": {
+        "title": "UserMgrs",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau User Mgr",
+        "createOrEditLabel": "Créer ou éditer un User Mgr",
+        "notFound": "Aucun User Mgr trouvé"
+      },
+      "created": "Un nouveau User Mgr a été créé avec l'identifiant {{ param }}",
+      "updated": "Le User Mgr avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le User Mgr avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le User Mgr {{ id }} ?"
+      },
+      "detail": {
+        "title": "User Mgr"
+      },
+      "id": "ID",
+      "type": "Type",
+      "quotaHoraire": "Quota Horaire",
+      "departement": "Departement",
+      "grade": "Grade"
+    }
+  }
+}

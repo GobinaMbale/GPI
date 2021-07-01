@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="reserverMateriel">
+      <h2 data-cy="reserverMaterielDetailsHeading"><span jhiTranslate="gpiApp.reserverMateriel.detail.title">Reserver Materiel</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ reserverMateriel.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.reserverMateriel.dateReservation">Date Reservation</span></dt>
+        <dd>
+          <span>{{ reserverMateriel.dateReservation | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.reserverMateriel.dateRetour">Date Retour</span></dt>
+        <dd>
+          <span>{{ reserverMateriel.dateRetour | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.reserverMateriel.auteur">Auteur</span></dt>
+        <dd>
+          <div *ngIf="reserverMateriel.auteur">
+            <a [routerLink]="['/user-mgr', reserverMateriel.auteur?.id, 'view']">{{ reserverMateriel.auteur?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.reserverMateriel.materiel">Materiel</span></dt>
+        <dd>
+          <div *ngIf="reserverMateriel.materiel">
+            <a [routerLink]="['/materiel', reserverMateriel.materiel?.id, 'view']">{{ reserverMateriel.materiel?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/reserver-materiel', reserverMateriel.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

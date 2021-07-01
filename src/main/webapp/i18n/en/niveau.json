@@ -1,0 +1,12 @@
+{
+  "gpiApp": {
+    "Niveau": {
+      "null": "",
+      "I": "I",
+      "II": "II",
+      "III": "III",
+      "IV": "IV",
+      "V": "V"
+    }
+  }
+}

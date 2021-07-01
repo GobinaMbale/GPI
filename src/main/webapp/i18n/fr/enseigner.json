@@ -1,0 +1,27 @@
+{
+  "gpiApp": {
+    "enseigner": {
+      "home": {
+        "title": "Enseigners",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Enseigner",
+        "createOrEditLabel": "Créer ou éditer un Enseigner",
+        "notFound": "Aucun Enseigner trouvé"
+      },
+      "created": "Un nouveau Enseigner a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Enseigner avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Enseigner avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Enseigner {{ id }} ?"
+      },
+      "detail": {
+        "title": "Enseigner"
+      },
+      "id": "ID",
+      "dateDebut": "Date Debut",
+      "dateFin": "Date Fin",
+      "matiere": "Matiere",
+      "enseignant": "Enseignant"
+    }
+  }
+}

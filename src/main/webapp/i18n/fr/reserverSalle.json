@@ -1,0 +1,27 @@
+{
+  "gpiApp": {
+    "reserverSalle": {
+      "home": {
+        "title": "ReserverSalles",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Reserver Salle",
+        "createOrEditLabel": "Créer ou éditer un Reserver Salle",
+        "notFound": "Aucun Reserver Salle trouvé"
+      },
+      "created": "Un nouveau Reserver Salle a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Reserver Salle avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Reserver Salle avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Reserver Salle {{ id }} ?"
+      },
+      "detail": {
+        "title": "Reserver Salle"
+      },
+      "id": "ID",
+      "dateReservation": "Date Reservation",
+      "motif": "Motif",
+      "classe": "Classe",
+      "salle": "Salle"
+    }
+  }
+}

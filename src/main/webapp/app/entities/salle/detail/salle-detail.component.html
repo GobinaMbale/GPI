@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="salle">
+      <h2 data-cy="salleDetailsHeading"><span jhiTranslate="gpiApp.salle.detail.title">Salle</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ salle.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.salle.code">Code</span></dt>
+        <dd>
+          <span>{{ salle.code }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.salle.nom">Nom</span></dt>
+        <dd>
+          <span>{{ salle.nom }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.salle.campus">Campus</span></dt>
+        <dd>
+          <span>{{ salle.campus }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.salle.capacite">Capacite</span></dt>
+        <dd>
+          <span>{{ salle.capacite }}</span>
+        </dd>
+        <dt><span jhiTranslate="gpiApp.salle.batiment">Batiment</span></dt>
+        <dd>
+          <span>{{ salle.batiment }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/salle', salle.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

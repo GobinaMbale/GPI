@@ -1,0 +1,39 @@
+{
+  "name": "ReserverSalle",
+  "fields": [
+    {
+      "fieldName": "dateReservation",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "motif",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "classe",
+      "otherEntityRelationshipName": "reserverSalle",
+      "relationshipName": "classe"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "salle",
+      "otherEntityRelationshipName": "reserverSalle",
+      "relationshipName": "salle"
+    }
+  ],
+  "entityTableName": "reserver_salle",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210630153023"
+}

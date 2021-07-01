@@ -1,0 +1,24 @@
+{
+  "gpiApp": {
+    "typeMateriel": {
+      "home": {
+        "title": "Type Materiels",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Type Materiel",
+        "createOrEditLabel": "Create or edit a Type Materiel",
+        "notFound": "No Type Materiels found"
+      },
+      "created": "A new Type Materiel is created with identifier {{ param }}",
+      "updated": "A Type Materiel is updated with identifier {{ param }}",
+      "deleted": "A Type Materiel is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Type Materiel {{ id }}?"
+      },
+      "detail": {
+        "title": "Type Materiel"
+      },
+      "id": "ID",
+      "libelle": "Libelle"
+    }
+  }
+}
