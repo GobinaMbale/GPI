@@ -21,3 +21,16 @@ Main page styles
     background-size: contain;
   }
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.pointer:hover {
+  box-shadow: -1px 10px 29px 0px rgba(0, 0, 0, 0.8);
+}
+
+img {
+  width: 80%;
+  height: 80%;
+}

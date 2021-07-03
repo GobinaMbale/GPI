@@ -14,6 +14,7 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
   imports: [
     RouterModule.forRoot(
       [
+        { path: '', redirectTo: 'login', pathMatch: 'full' },
         {
           path: 'admin',
           data: {
@@ -27,7 +28,7 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           loadChildren: () => import('./account/account.module').then(m => m.AccountModule),
         },
         {
-          path: 'login',
+          path: '',
           loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
         },
         ...LAYOUT_ROUTES,
