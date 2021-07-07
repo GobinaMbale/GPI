@@ -6,6 +6,8 @@ import { MaterielComponent } from '../list/materiel.component';
 import { MaterielDetailComponent } from '../detail/materiel-detail.component';
 import { MaterielUpdateComponent } from '../update/materiel-update.component';
 import { MaterielRoutingResolveService } from './materiel-routing-resolve.service';
+import { ReserverMaterielUpdate2Component } from '../../reserver-materiel/update/reserver-materiel-update-2.component';
+import { ReserverMaterielRoutingResolve2Service } from '../../reserver-materiel/route/reserver-materiel-routing-resolve-2.service';
 
 const materielRoute: Routes = [
   {
@@ -37,6 +39,14 @@ const materielRoute: Routes = [
     component: MaterielUpdateComponent,
     resolve: {
       materiel: MaterielRoutingResolveService,
+    },
+    canActivate: [UserRouteAccessService],
+  },
+  {
+    path: ':id/reserver-materiel',
+    component: ReserverMaterielUpdate2Component,
+    resolve: {
+      profil: ReserverMaterielRoutingResolve2Service,
     },
     canActivate: [UserRouteAccessService],
   },

@@ -14,6 +14,11 @@
         </div>
 
         <div class="form-group">
+          <label class="form-control-label" for="field_id">Name</label>
+          <input type="string" class="form-control" name="id" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="form-group">
           <label class="form-control-label" jhiTranslate="gpiApp.userMgr.type" for="field_type">Type</label>
           <select class="form-control" name="type" formControlName="type" id="field_type" data-cy="type">
             <option [ngValue]="null">{{ 'gpiApp.TypeEnseignant.null' | translate }}</option>

@@ -20,6 +20,9 @@ public class UserMgr implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "name")
+    private String name;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "type")
     private TypeEnseignant type;
@@ -93,6 +96,14 @@ public class UserMgr implements Serializable {
     public UserMgr grade(Grade grade) {
         this.setGrade(grade);
         return this;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setGrade(Grade grade) {

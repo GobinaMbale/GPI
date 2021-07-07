@@ -69,7 +69,7 @@
               [ngValue]="typeMaterielOption.id === editForm.get('type')!.value?.id ? editForm.get('type')!.value : typeMaterielOption"
               *ngFor="let typeMaterielOption of typeMaterielsSharedCollection; trackBy: trackTypeMaterielById"
             >
-              {{ typeMaterielOption.id }}
+              {{ typeMaterielOption.libelle }}
             </option>
           </select>
         </div>

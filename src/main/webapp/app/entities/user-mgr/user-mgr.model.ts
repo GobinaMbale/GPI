@@ -4,6 +4,7 @@ import { TypeEnseignant } from 'app/entities/enumerations/type-enseignant.model'
 
 export interface IUserMgr {
   id?: number;
+  name?: string;
   type?: TypeEnseignant | null;
   quotaHoraire?: number | null;
   departement?: IDepartement | null;
@@ -13,6 +14,7 @@ export interface IUserMgr {
 export class UserMgr implements IUserMgr {
   constructor(
     public id?: number,
+    public name?: string,
     public type?: TypeEnseignant | null,
     public quotaHoraire?: number | null,
     public departement?: IDepartement | null,

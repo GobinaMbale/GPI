@@ -25,6 +25,7 @@ export class UserMgrUpdateComponent implements OnInit {
   editForm = this.fb.group({
     id: [],
     type: [],
+    name: [],
     quotaHoraire: [],
     departement: [],
     grade: [],
@@ -91,6 +92,7 @@ export class UserMgrUpdateComponent implements OnInit {
     this.editForm.patchValue({
       id: userMgr.id,
       type: userMgr.type,
+      name: userMgr.name,
       quotaHoraire: userMgr.quotaHoraire,
       departement: userMgr.departement,
       grade: userMgr.grade,
@@ -126,6 +128,7 @@ export class UserMgrUpdateComponent implements OnInit {
       ...new UserMgr(),
       id: this.editForm.get(['id'])!.value,
       type: this.editForm.get(['type'])!.value,
+      name: this.editForm.get(['name'])!.value,
       quotaHoraire: this.editForm.get(['quotaHoraire'])!.value,
       departement: this.editForm.get(['departement'])!.value,
       grade: this.editForm.get(['grade'])!.value,

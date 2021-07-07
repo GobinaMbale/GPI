@@ -46,6 +46,9 @@ public class UserMgrServiceImpl implements UserMgrService {
                     if (userMgr.getQuotaHoraire() != null) {
                         existingUserMgr.setQuotaHoraire(userMgr.getQuotaHoraire());
                     }
+                    if (userMgr.getName() != null) {
+                        existingUserMgr.setName(userMgr.getName());
+                    }
 
                     return existingUserMgr;
                 }

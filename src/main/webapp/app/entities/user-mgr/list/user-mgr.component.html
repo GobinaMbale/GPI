@@ -33,6 +33,7 @@
       <thead>
         <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
           <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="id"><span>Name</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="type"><span jhiTranslate="gpiApp.userMgr.type">Type</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="quotaHoraire">
             <span jhiTranslate="gpiApp.userMgr.quotaHoraire">Quota Horaire</span> <fa-icon icon="sort"></fa-icon>
@@ -49,6 +50,7 @@
           <td>
             <a [routerLink]="['/user-mgr', userMgr.id, 'view']">{{ userMgr.id }}</a>
           </td>
+          <td>{{ userMgr.name }}</td>
           <td jhiTranslate="{{ 'gpiApp.TypeEnseignant.' + userMgr.type }}">{{ userMgr.type }}</td>
           <td>{{ userMgr.quotaHoraire }}</td>
           <td>
